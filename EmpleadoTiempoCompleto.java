@@ -8,15 +8,18 @@ public class EmpleadoTiempoCompleto extends Empleado implements Beneficiable{
         this.departamento = departamento;
     }
 
+    @Override
     public double calcularSalario(){
         return salarioBase + calcularBonificacion();
     }
 
+    @Override
     public double calcularBonificacion(){
         double multiplicador = 0.10;
         return salarioBase * multiplicador * antiguedad;
     }
 
+    @Override
     public double aplicarDescuentoSeguro(){
         double porcentaje = 5;
         return calcularSalario() * (porcentaje/100);

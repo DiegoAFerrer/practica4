@@ -8,10 +8,12 @@ public class EmpleadoFreelance extends Empleado implements Beneficiable{
         this.tarifaHora = tarifaHora;
     }
 
+    @Override
     public double calcularSalario(){
         return (horasTrabajadas * tarifaHora) + calcularBonificacion();
     }
 
+    @Override
     public double calcularBonificacion(){
         double porcentaje = 5;
         if(horasTrabajadas > 160){
@@ -22,6 +24,7 @@ public class EmpleadoFreelance extends Empleado implements Beneficiable{
         }
     }
 
+    @Override
     public double aplicarDescuentoSeguro(){
         int porcentaje = 3;
         return calcularSalario() * (porcentaje/100);
