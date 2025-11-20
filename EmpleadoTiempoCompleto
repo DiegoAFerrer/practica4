@@ -1,0 +1,6 @@
+public class EmpleadoTiempoCompleto extends Empleado implements Beneficiable{
+    private int antiguedad;
+    private String departamento;
+
+    
+}
