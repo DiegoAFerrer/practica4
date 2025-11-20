@@ -2,5 +2,39 @@ public class EmpleadoTiempoCompleto extends Empleado implements Beneficiable{
     private int antiguedad;
     private String departamento;
 
-    
+    public EmpleadoTiempoCompleto(String id, String nombre, double salarioBase, int antiguedad, String departamento){
+        super(id, nombre, salarioBase);
+        this.antiguedad = antiguedad;
+        this.departamento = departamento;
+    }
+
+    public double calcularSalario(){
+        return salarioBase + calcularBonificacion();
+    }
+
+    public double calcularBonificacion(){
+        double multiplicador = 0.10;
+        return salarioBase * multiplicador * antiguedad;
+    }
+
+    public double aplicarDescuentoSeguro(){
+        double porcentaje = 5;
+        return calcularSalario() * (porcentaje/100);
+    }
+
+    public int getAntiguedad(){
+        return this.antiguedad;
+    }
+
+    public String getDepartamento(){
+        return this.departamento;
+    }
+
+    public void setAntiguedad(int antiguedad){
+        this.antiguedad = antiguedad;
+    }
+
+    public void setDepartamento(String departamento){
+        this.departamento = departamento;
+    }
 }
